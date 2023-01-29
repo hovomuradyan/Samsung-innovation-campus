@@ -9,18 +9,18 @@
 
 	<LinearLayout
 		android:id="@+id/linear1"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
 		android:orientation="horizontal"
 		android:paddingTop="30dp"
-		android:paddingBottom="30dp">
-
+		android:paddingBottom="30dp"
+		android:background="@drawable/main_background">
+		
 		<LinearLayout
 			android:id="@+id/linear3"
 			android:layout_width="match_parent"
-			android:layout_height="607dp"
+			android:layout_height="match_parent"
 			android:layout_weight="5"
-			android:background="@drawable/main_background"
 			android:gravity="center_horizontal|center_vertical"
 			android:orientation="horizontal">
 
