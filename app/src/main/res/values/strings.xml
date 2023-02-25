@@ -9,5 +9,8 @@
     <string name="email">Email</string>
     <string name="username">Username</string>
     <string name="break_if_wrong">Break if wrong:</string>
+    <string name="or_sign_up_with">or sign up with</string>
+    <string name="dialog_text">You have X points</string>
+    <string name="ok">OK</string>
 
 </resources>

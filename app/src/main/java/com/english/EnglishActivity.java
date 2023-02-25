@@ -4,12 +4,11 @@ import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -338,10 +337,20 @@ public class EnglishActivity extends questionsForUnits {
         };
         _timer.schedule(t, 3000);
     }
-
+    @SuppressLint("SetTextI18n")
+    public void openDialog() {
+        final Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.dialog_demo);
+        TextView a = findViewById(R.id.dialog_info);
+        //a.setText("You have" + total_true + " points");
+        dialog.setTitle("Total Points");
+        dialog.show();
+    }
     private void _true_() {
         pla.start();
         total_true++;
+        openDialog();
+
         textview6.setText(String.valueOf((long) (total_true)));
         if (getIntent().getStringExtra("cha").equals("all")) {
             if (total_true == 60) {
@@ -349,6 +358,7 @@ public class EnglishActivity extends questionsForUnits {
                     @Override
                     public void run() {
                         runOnUiThread(() -> {
+                            openDialog();
                             congr.start();
                             _get();
                         });
@@ -374,6 +384,7 @@ public class EnglishActivity extends questionsForUnits {
                     @Override
                     public void run() {
                         runOnUiThread(() -> {
+                            openDialog();
                             congr.start();
                             _get();
                         });
@@ -871,6 +882,4 @@ public class EnglishActivity extends questionsForUnits {
         button4.setText(answer4.get(num1));
     }
 
-//    private void question() {
-//    }
 }
