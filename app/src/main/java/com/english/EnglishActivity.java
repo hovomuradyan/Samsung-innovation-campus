@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -44,14 +46,18 @@ public class EnglishActivity extends questionsForUnits {
     public Intent go = new Intent();
     public MediaPlayer click, congr, pla;
     public ObjectAnimator sno = new ObjectAnimator();
+    public int settingsWrongAnswer;
 
     @Override
     protected void onCreate(Bundle _savedInstanceState) {
         super.onCreate(_savedInstanceState);
-        setContentView(R.layout.chemistry);
+        setContentView(R.layout.english);
+        settingsWrongAnswer = getIntent().getIntExtra("settingsWrongAnswer", 3);
         initialize();
         initializeLogic();
     }
+
+
 
     private void initialize() {
         linear7 = findViewById(R.id.linear7);
@@ -242,7 +248,12 @@ public class EnglishActivity extends questionsForUnits {
                         _true_();
                     } else {
                         button1.setBackgroundResource(R.drawable.wrong_answer_btn);
-                        _false_();
+                        if (settingsWrongAnswer == 1) {
+                            _false_();
+                        }
+                        else{
+                            _true_();
+                        }
                     }
                 });
             }
@@ -263,7 +274,12 @@ public class EnglishActivity extends questionsForUnits {
                         _true_();
                     } else {
                         button2.setBackgroundResource(R.drawable.wrong_answer_btn);
-                        _false_();
+                        if (settingsWrongAnswer == 1) {
+                            _false_();
+                        }
+                        else{
+                            _true_();
+                        }
                     }
                 });
             }
@@ -284,7 +300,12 @@ public class EnglishActivity extends questionsForUnits {
                         _true_();
                     } else {
                         button3.setBackgroundResource(R.drawable.wrong_answer_btn);
-                        _false_();
+                        if (settingsWrongAnswer == 1) {
+                            _false_();
+                        }
+                        else{
+                            _true_();
+                        }
                     }
                 });
             }
@@ -305,7 +326,12 @@ public class EnglishActivity extends questionsForUnits {
                         _true_();
                     } else {
                         button4.setBackgroundResource(R.drawable.wrong_answer_btn);
-                        _false_();
+                        if (settingsWrongAnswer == 1) {
+                            _false_();
+                        }
+                        else{
+                            _true_();
+                        }
                     }
                 });
             }
@@ -467,6 +493,7 @@ public class EnglishActivity extends questionsForUnits {
                 } else {
                     total.edit().putString("cha1", String.valueOf((long) (total_finish))).apply();
                 }
+                go.putExtra("settingsWrongAnswer", settingsWrongAnswer);
                 go.setClass(getApplicationContext(), ChapActivity.class);
                 startActivity(go);
                 finish();
@@ -482,6 +509,7 @@ public class EnglishActivity extends questionsForUnits {
                 } else {
                     total.edit().putString("cha2", String.valueOf((long) (total_finish))).apply();
                 }
+                go.putExtra("settingsWrongAnswer", settingsWrongAnswer);
                 go.setClass(getApplicationContext(), ChapActivity.class);
                 startActivity(go);
                 finish();
@@ -497,6 +525,7 @@ public class EnglishActivity extends questionsForUnits {
                 } else {
                     total.edit().putString("cha3", String.valueOf((long) (total_finish))).apply();
                 }
+                go.putExtra("settingsWrongAnswer", settingsWrongAnswer);
                 go.setClass(getApplicationContext(), ChapActivity.class);
                 startActivity(go);
                 finish();
@@ -512,6 +541,7 @@ public class EnglishActivity extends questionsForUnits {
                 } else {
                     total.edit().putString("cha4", String.valueOf((long) (total_finish))).apply();
                 }
+                go.putExtra("settingsWrongAnswer", settingsWrongAnswer);
                 go.setClass(getApplicationContext(), ChapActivity.class);
                 startActivity(go);
                 finish();
@@ -527,6 +557,7 @@ public class EnglishActivity extends questionsForUnits {
                 } else {
                     total.edit().putString("cha5", String.valueOf((long) (total_finish))).apply();
                 }
+                go.putExtra("settingsWrongAnswer", settingsWrongAnswer);
                 go.setClass(getApplicationContext(), ChapActivity.class);
                 startActivity(go);
                 finish();
@@ -542,6 +573,7 @@ public class EnglishActivity extends questionsForUnits {
                 } else {
                     total.edit().putString("cha6", String.valueOf((long) (total_finish))).apply();
                 }
+                go.putExtra("settingsWrongAnswer", settingsWrongAnswer);
                 go.setClass(getApplicationContext(), ChapActivity.class);
                 startActivity(go);
                 finish();
@@ -557,6 +589,7 @@ public class EnglishActivity extends questionsForUnits {
                 } else {
                     total.edit().putString("cha7", String.valueOf((long) (total_finish))).apply();
                 }
+                go.putExtra("settingsWrongAnswer", settingsWrongAnswer);
                 go.setClass(getApplicationContext(), ChapActivity.class);
                 startActivity(go);
                 finish();
@@ -572,6 +605,7 @@ public class EnglishActivity extends questionsForUnits {
                 } else {
                     total.edit().putString("cha8", String.valueOf((long) (total_finish))).apply();
                 }
+                go.putExtra("settingsWrongAnswer", settingsWrongAnswer);
                 go.setClass(getApplicationContext(), ChapActivity.class);
                 startActivity(go);
                 finish();
@@ -587,6 +621,7 @@ public class EnglishActivity extends questionsForUnits {
                 } else {
                     total.edit().putString("cha9", String.valueOf((long) (total_finish))).apply();
                 }
+                go.putExtra("settingsWrongAnswer", settingsWrongAnswer);
                 go.setClass(getApplicationContext(), ChapActivity.class);
                 startActivity(go);
                 finish();
@@ -602,6 +637,7 @@ public class EnglishActivity extends questionsForUnits {
                 } else {
                     total.edit().putString("cha10", String.valueOf((long) (total_finish))).apply();
                 }
+                go.putExtra("settingsWrongAnswer", settingsWrongAnswer);
                 go.setClass(getApplicationContext(), ChapActivity.class);
                 startActivity(go);
                 finish();
@@ -617,6 +653,7 @@ public class EnglishActivity extends questionsForUnits {
                 } else {
                     total.edit().putString("cha11", String.valueOf((long) (total_finish))).apply();
                 }
+                go.putExtra("settingsWrongAnswer", settingsWrongAnswer);
                 go.setClass(getApplicationContext(), ChapActivity.class);
                 startActivity(go);
                 finish();
@@ -632,6 +669,7 @@ public class EnglishActivity extends questionsForUnits {
                 } else {
                     total.edit().putString("cha12", String.valueOf((long) (total_finish))).apply();
                 }
+                go.putExtra("settingsWrongAnswer", settingsWrongAnswer);
                 go.setClass(getApplicationContext(), ChapActivity.class);
                 startActivity(go);
                 finish();
@@ -647,6 +685,7 @@ public class EnglishActivity extends questionsForUnits {
                 } else {
                     total.edit().putString("cha13", String.valueOf((long) (total_finish))).apply();
                 }
+                go.putExtra("settingsWrongAnswer", settingsWrongAnswer);
                 go.setClass(getApplicationContext(), ChapActivity.class);
                 startActivity(go);
                 finish();
@@ -662,6 +701,7 @@ public class EnglishActivity extends questionsForUnits {
                 } else {
                     total.edit().putString("cha14", String.valueOf((long) (total_finish))).apply();
                 }
+                go.putExtra("settingsWrongAnswer", settingsWrongAnswer);
                 go.setClass(getApplicationContext(), ChapActivity.class);
                 startActivity(go);
                 finish();
@@ -677,6 +717,7 @@ public class EnglishActivity extends questionsForUnits {
                 } else {
                     total.edit().putString("cha15", String.valueOf((long) (total_finish))).apply();
                 }
+                go.putExtra("settingsWrongAnswer", settingsWrongAnswer);
                 go.setClass(getApplicationContext(), ChapActivity.class);
                 startActivity(go);
                 finish();
@@ -692,6 +733,7 @@ public class EnglishActivity extends questionsForUnits {
                 } else {
                     total.edit().putString("cha16", String.valueOf((long) (total_finish))).apply();
                 }
+                go.putExtra("settingsWrongAnswer", settingsWrongAnswer);
                 go.setClass(getApplicationContext(), ChapActivity.class);
                 startActivity(go);
                 finish();
@@ -707,6 +749,7 @@ public class EnglishActivity extends questionsForUnits {
                 } else {
                     total.edit().putString("cha17", String.valueOf((long) (total_finish))).apply();
                 }
+                go.putExtra("settingsWrongAnswer", settingsWrongAnswer);
                 go.setClass(getApplicationContext(), ChapActivity.class);
                 startActivity(go);
                 finish();
@@ -722,6 +765,7 @@ public class EnglishActivity extends questionsForUnits {
                 } else {
                     total.edit().putString("cha18", String.valueOf((long) (total_finish))).apply();
                 }
+                go.putExtra("settingsWrongAnswer", settingsWrongAnswer);
                 go.setClass(getApplicationContext(), ChapActivity.class);
                 startActivity(go);
                 finish();
@@ -737,6 +781,7 @@ public class EnglishActivity extends questionsForUnits {
                 } else {
                     total.edit().putString("all", String.valueOf((long) (total_finish))).apply();
                 }
+                go.putExtra("settingsWrongAnswer", settingsWrongAnswer);
                 go.setClass(getApplicationContext(), ChapActivity.class);
                 startActivity(go);
                 finish();
@@ -825,4 +870,7 @@ public class EnglishActivity extends questionsForUnits {
         button3.setText(answer3.get(num1));
         button4.setText(answer4.get(num1));
     }
+
+//    private void question() {
+//    }
 }

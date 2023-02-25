@@ -14,10 +14,10 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle _savedInstanceState) {
 		super.onCreate(_savedInstanceState);
 		setContentView(R.layout.main);
-		initialize();
-		initializeLogic();
+		Intent intent = new Intent(this, SignUp.class);
+		startActivity(intent);
+		//initializeLogic();
 	}
-	private void initialize() {}
 
 	private void initializeLogic() {
 		TimerTask nex = new TimerTask() {

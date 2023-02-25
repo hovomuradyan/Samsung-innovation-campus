@@ -2,5 +2,12 @@
 	<string	name="app_name"	translatable="false">Toefl Vocabulary</string>
 	<string name="height">140dp</string>
 	<string name="width">100dp</string>
-	
+    <string name="re_password">Re-Password</string>
+    <string name="sign_up">Sign up</string>
+    <string name="register">REGISTER</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="break_if_wrong">Break if wrong:</string>
+
 </resources>

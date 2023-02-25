@@ -4,23 +4,57 @@ import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.CheckBox;
 
 public class ChapActivity extends Activity {
 
     private final Intent i = new Intent();
     private MediaPlayer clk;
+    public Integer settingsWrongAnswer = 0;
 
     @Override
     protected void onCreate(Bundle _savedInstanceState) {
         super.onCreate(_savedInstanceState);
         setContentView(R.layout.chap);
+        settingsWrongAnswer = getIntent().getIntExtra("settingsWrongAnswer", 0);
+        Log.d("ALO::::::", String.valueOf(settingsWrongAnswer));
         initialize();
         initializeLogic();
     }
 
-    private void initialize() {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        MenuItem item = menu.findItem(R.id.action_settings1);
+        if(settingsWrongAnswer == 1) {
+            item.setChecked(true);
+        }
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        if(settingsWrongAnswer == 1) {
+            item.setChecked(true);
+        }
+        if (item.getItemId() == R.id.action_settings1) {
+            if (!item.isChecked()) {
+                settingsWrongAnswer = 1;
+                item.setChecked(true);
+            } else {
+                settingsWrongAnswer = 0;
+                item.setChecked(false);
+            }
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    private void initialize() {
         Button unit1Btn = findViewById(R.id.unit1Btn);
         Button unit2Btn = findViewById(R.id.unit2Btn);
         Button unit3Btn = findViewById(R.id.unit3Btn);
@@ -45,6 +79,7 @@ public class ChapActivity extends Activity {
             clk.start();
             i.setClass(getApplicationContext(), EnglishActivity.class);
             i.putExtra("cha", "cha1");
+            i.putExtra("settingsWrongAnswer", settingsWrongAnswer);
             startActivity(i);
             finish();
         });

@@ -50,6 +50,12 @@
 		<activity
 			android:name=".ChapActivity"
 			android:configChanges="orientation|screenSize"
+			android:theme="@style/AppTheme"
+			android:screenOrientation="sensorPortrait"
+			android:windowSoftInputMode="stateHidden"/>
+		<activity
+			android:name=".SignUp"
+			android:configChanges="orientation|screenSize"
 			android:theme="@style/FullScreen"
 			android:screenOrientation="sensorPortrait"
 			android:windowSoftInputMode="stateHidden"/>
