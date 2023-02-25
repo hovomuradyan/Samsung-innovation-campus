@@ -349,8 +349,7 @@ public class EnglishActivity extends questionsForUnits {
     private void _true_() {
         pla.start();
         total_true++;
-        openDialog();
-
+        //openDialog();
         textview6.setText(String.valueOf((long) (total_true)));
         if (getIntent().getStringExtra("cha").equals("all")) {
             if (total_true == 60) {
