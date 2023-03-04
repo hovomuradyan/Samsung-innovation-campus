@@ -11,7 +11,7 @@
 		android:label="Toefl Vocabulary"
 		android:icon="@drawable/logo"
 		android:largeHeap="true"
-		android:theme="@style/AppTheme">
+		android:theme="@style/Theme.AppCompat.Light">
 		<meta-data
 			android:name="com.google.android.gms.version"
 			android:value="@integer/google_play_services_version" />
@@ -19,9 +19,10 @@
 		<activity
 			android:name=".MainActivity"
 			android:configChanges="orientation|screenSize"
-			android:theme="@style/FullScreen"
-			android:screenOrientation="sensorPortrait"
-			android:windowSoftInputMode="stateHidden">
+			android:theme="@style/Theme.AppCompat.Light"
+			android:screenOrientation="fullSensor"
+			android:windowSoftInputMode="stateHidden"
+			android:exported="true">
 			<intent-filter>
 				<action	android:name="android.intent.action.MAIN"/>
 				<category android:name="android.intent.category.LAUNCHER"/>
@@ -38,26 +39,32 @@
 		<activity
 			android:name=".MenuActivity"
 			android:configChanges="orientation|screenSize"
-			android:theme="@style/FullScreen"
-			android:screenOrientation="sensorPortrait"
+			android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+			android:screenOrientation="fullSensor"
 			android:windowSoftInputMode="stateHidden"/>
 		<activity
 			android:name=".EnglishActivity"
 			android:configChanges="orientation|screenSize"
-			android:theme="@style/FullScreen"
-			android:screenOrientation="sensorPortrait"
+			android:theme="@style/Theme.AppCompat.Light"
+			android:screenOrientation="fullSensor"
 			android:windowSoftInputMode="stateHidden"/>
 		<activity
 			android:name=".ChapActivity"
 			android:configChanges="orientation|screenSize"
-			android:theme="@style/AppTheme"
-			android:screenOrientation="sensorPortrait"
+			android:theme="@style/Theme.AppCompat.Light"
+			android:screenOrientation="fullSensor"
 			android:windowSoftInputMode="stateHidden"/>
 		<activity
 			android:name=".SignUp"
 			android:configChanges="orientation|screenSize"
-			android:theme="@style/FullScreen"
-			android:screenOrientation="sensorPortrait"
+			android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+			android:screenOrientation="fullSensor"
+			android:windowSoftInputMode="stateHidden"/>
+		<activity
+			android:name=".SignIn"
+			android:configChanges="orientation|screenSize"
+			android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+			android:screenOrientation="fullSensor"
 			android:windowSoftInputMode="stateHidden"/>
 	</application>
 </manifest>

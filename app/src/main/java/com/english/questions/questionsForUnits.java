@@ -1,10 +1,10 @@
 package com.english.questions;
 
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
-public class questionsForUnits extends Activity
+public class questionsForUnits extends AppCompatActivity
 {
 	public ArrayList<String> Questions=new ArrayList<>();
 	public ArrayList<String> answer1=new ArrayList<>();

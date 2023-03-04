@@ -1,12 +1,13 @@
 package com.english;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 	private final Timer _timer = new Timer();
 	private final Intent j = new Intent();
 
@@ -14,7 +15,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle _savedInstanceState) {
 		super.onCreate(_savedInstanceState);
 		setContentView(R.layout.main);
-		Intent intent = new Intent(this, SignUp.class);
+		Intent intent = new Intent(this, SignIn.class);
 		startActivity(intent);
 		//initializeLogic();
 	}

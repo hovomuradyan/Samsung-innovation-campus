@@ -1,16 +1,15 @@
 package com.english;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.CheckBox;
 
-public class ChapActivity extends Activity {
+public class ChapActivity extends AppCompatActivity {
 
     private final Intent i = new Intent();
     private MediaPlayer clk;

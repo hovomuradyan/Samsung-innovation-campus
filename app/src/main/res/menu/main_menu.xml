@@ -4,7 +4,12 @@
     <item
         android:id="@+id/action_settings1"
         android:title="@string/break_if_wrong"
-        android:showAsAction="never"
+        app:showAsAction="never"
         android:checkable="true">
+    </item>
+    <item
+        android:id="@+id/action_settings2"
+        android:title="@string/set_timer"
+        app:showAsAction="never">
     </item>
 </menu>

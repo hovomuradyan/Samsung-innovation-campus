@@ -12,5 +12,9 @@
     <string name="or_sign_up_with">or sign up with</string>
     <string name="dialog_text">You have X points</string>
     <string name="ok">OK</string>
+    <string name="sign_in">Sign In</string>
+    <string name="login">Login</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="set_timer">set timer (on process)</string>
 
 </resources>

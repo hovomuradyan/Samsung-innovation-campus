@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "646733484418",
+    "project_id": "samsung-innovation-campu-55ea1",
+    "storage_bucket": "samsung-innovation-campu-55ea1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:646733484418:android:1c78fa0db189cb5aa83f9b",
+        "android_client_info": {
+          "package_name": "com.english"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "646733484418-4me8f5svasnapp2uff79ogi25lo2bq4c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDi0Zh98-BYOAyO5TDYSlzc2ssVQro71Qs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "646733484418-09ms2hsp21f9bnbhcedcss2snka55ai5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
