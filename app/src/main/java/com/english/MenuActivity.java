@@ -30,8 +30,18 @@ public class MenuActivity extends AppCompatActivity {
 		textView.setTypeface(costomFont);
 		Button learnBtn = findViewById(R.id.exitBtn);
 		Button startBtn = findViewById(R.id.startBtn);
+		Button listeningBtn = findViewById(R.id.listeningBtn);
 
-		learnBtn.setOnClickListener(view -> finish());
+		listeningBtn.setOnClickListener(v -> {
+			i.setClass(getApplicationContext(), ListeningActivity.class);
+			startActivity(i);
+		});
+
+
+		learnBtn.setOnClickListener(v -> {
+			i.setClass(getApplicationContext(), LearningActivity.class);
+			startActivity(i);
+		});
 
 		startBtn.setOnClickListener(view -> {
 			i.setClass(getApplicationContext(), ChapActivity.class);

@@ -66,5 +66,17 @@
 			android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
 			android:screenOrientation="fullSensor"
 			android:windowSoftInputMode="stateHidden"/>
+		<activity
+			android:name=".ListeningActivity"
+			android:configChanges="orientation|screenSize"
+			android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+			android:screenOrientation="fullSensor"
+			android:windowSoftInputMode="stateHidden"/>
+		<activity
+			android:name=".LearningActivity"
+			android:configChanges="orientation|screenSize"
+			android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+			android:screenOrientation="fullSensor"
+			android:windowSoftInputMode="stateHidden"/>
 	</application>
 </manifest>

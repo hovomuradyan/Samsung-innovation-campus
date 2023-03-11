@@ -12,15 +12,17 @@ public class questionsForUnits extends AppCompatActivity
 	public ArrayList<String> answer3=new ArrayList<>();
 	public ArrayList<String> answer4=new ArrayList<>();
 	public ArrayList<String> correct=new ArrayList<>();
+	public ArrayList<String> example=new ArrayList<>();
 
 	public void question(){
-		// 30 questions for unit 1
+		// 10 questions for unit 1
 		Questions.add("Consume is ...");
 		answer1.add("to eat/to use up");
 		answer2.add("continue");
 		answer3.add("conserve");
 		answer4.add("sunset");
 		correct.add("to eat/to use up");
+		example.add("The new lights consume less electricity.");
 
 		Questions.add("a natural attraction or feeling of kinship");
 		answer1.add("affinity");
@@ -28,6 +30,7 @@ public class questionsForUnits extends AppCompatActivity
 		answer3.add("dye");
 		answer4.add("decadence");
 		correct.add("affinity");
+		example.add("I have great affinity with the mining community in this country");
 
 		Questions.add("young and inexperienced");
 		answer1.add("catering");
@@ -84,8 +87,7 @@ public class questionsForUnits extends AppCompatActivity
 		answer3.add("indefatigable");
 		answer4.add("incidental");
 		correct.add("unassailable");
-///
-		// Questions for unit 2
+/////  Questions for unit 2
 
 		Questions.add("Consume is ...");
 		answer1.add("to eat/to use up");
