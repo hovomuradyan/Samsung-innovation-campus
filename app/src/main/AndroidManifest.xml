@@ -20,7 +20,7 @@
 			android:name=".MainActivity"
 			android:configChanges="orientation|screenSize"
 			android:theme="@style/Theme.AppCompat.Light"
-			android:screenOrientation="fullSensor"
+			android:screenOrientation="portrait"
 			android:windowSoftInputMode="stateHidden"
 			android:exported="true">
 			<intent-filter>
@@ -40,43 +40,43 @@
 			android:name=".MenuActivity"
 			android:configChanges="orientation|screenSize"
 			android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-			android:screenOrientation="fullSensor"
+			android:screenOrientation="portrait"
 			android:windowSoftInputMode="stateHidden"/>
 		<activity
 			android:name=".EnglishActivity"
 			android:configChanges="orientation|screenSize"
 			android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-			android:screenOrientation="fullSensor"
+			android:screenOrientation="portrait"
 			android:windowSoftInputMode="stateHidden"/>
 		<activity
 			android:name=".ChapActivity"
 			android:configChanges="orientation|screenSize"
 			android:theme="@style/Theme.AppCompat.Light"
-			android:screenOrientation="fullSensor"
+			android:screenOrientation="portrait"
 			android:windowSoftInputMode="stateHidden"/>
 		<activity
-			android:name=".SignUp"
+			android:name=".SignUpActivity"
 			android:configChanges="orientation|screenSize"
 			android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-			android:screenOrientation="fullSensor"
+			android:screenOrientation="portrait"
 			android:windowSoftInputMode="stateHidden"/>
 		<activity
-			android:name=".SignIn"
+			android:name=".SignInActivity"
 			android:configChanges="orientation|screenSize"
 			android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-			android:screenOrientation="fullSensor"
+			android:screenOrientation="portrait"
 			android:windowSoftInputMode="stateHidden"/>
 		<activity
 			android:name=".ListeningActivity"
 			android:configChanges="orientation|screenSize"
 			android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-			android:screenOrientation="fullSensor"
+			android:screenOrientation="portrait"
 			android:windowSoftInputMode="stateHidden"/>
 		<activity
 			android:name=".LearningActivity"
 			android:configChanges="orientation|screenSize"
 			android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-			android:screenOrientation="fullSensor"
+			android:screenOrientation="portrait"
 			android:windowSoftInputMode="stateHidden"/>
 	</application>
 </manifest>
