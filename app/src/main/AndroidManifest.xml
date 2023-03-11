@@ -45,7 +45,7 @@
 		<activity
 			android:name=".EnglishActivity"
 			android:configChanges="orientation|screenSize"
-			android:theme="@style/Theme.AppCompat.Light"
+			android:theme="@style/Theme.AppCompat.Light.NoActionBar"
 			android:screenOrientation="fullSensor"
 			android:windowSoftInputMode="stateHidden"/>
 		<activity

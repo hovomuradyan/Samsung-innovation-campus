@@ -50,6 +50,7 @@ public class SignIn extends AppCompatActivity {
             } else {
                 mAuth.signInWithEmailAndPassword(emailLogin.getText().toString(), passwordLogin.getText().toString()).addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
+                        finish();
                         Intent intent = new Intent(SignIn.this, MenuActivity.class);
                         startActivity(intent);
                     } else {
@@ -61,6 +62,7 @@ public class SignIn extends AppCompatActivity {
         });
 
         createNewAccount.setOnClickListener(v -> {
+            finish();
             Intent intent = new Intent(SignIn.this, SignUp.class);
             startActivity(intent);
         });

@@ -11,10 +11,9 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:padding="4dp"
-		android:background="@drawable/image_10"
+		android:background="@color/backgroundColor"
 		android:gravity="center_horizontal|center_vertical"
-		android:orientation="vertical"
-		tools:ignore="UselessParent">
+		android:orientation="vertical">
 
 		<LinearLayout
 			android:id="@+id/linear6"
@@ -27,7 +26,7 @@
 				android:id="@+id/linear2"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
-				android:background="@drawable/image_3"
+				android:background="@drawable/round_corners"
 				android:gravity="center_horizontal|center_vertical"
 				android:orientation="vertical"
 				android:paddingLeft="28dp"
@@ -41,7 +40,7 @@
 					android:layout_height="wrap_content"
 					android:gravity="center_horizontal|center_vertical"
 					android:padding="4dp"
-					android:textColor="#000000"
+					android:textColor="#FFFFFF"
 					android:textSize="18sp"
 					android:textStyle="bold" />
 
@@ -81,24 +80,26 @@
 						android:id="@+id/button2"
 						android:layout_width="match_parent"
 						android:layout_height="60dp"
-						android:background="@drawable/btn"
+						android:background="@drawable/background"
 						android:padding="8dp"
 						android:textAllCaps="false"
 						android:textColor="#000000"
 						android:textSize="20sp"
-						android:textStyle="normal" />
+						android:textStyle="normal"
+						android:layout_marginBottom="10dp"/>
 
 					<Button
 						android:id="@+id/button4"
 						android:layout_width="match_parent"
 						android:layout_height="60dp"
-						android:layout_marginTop="1dp"
-						android:background="@drawable/btn"
+						android:layout_marginTop="10dp"
+						android:background="@drawable/background"
 						android:padding="8dp"
 						android:textAllCaps="false"
 						android:textColor="#000000"
 						android:textSize="20sp"
-						android:textStyle="normal" />
+						android:textStyle="normal"
+						/>
 
 				</LinearLayout>
 
@@ -112,17 +113,18 @@
 						android:id="@+id/linear10"
 						android:layout_width="50dp"
 						android:layout_height="50dp"
-						android:background="@drawable/quit_btn"
+						android:background="@drawable/background"
 						android:gravity="center_horizontal|center_vertical"
 						android:orientation="horizontal"
-						android:padding="4dp">
+						android:padding="4dp"
+						>
 
 						<ImageView
 							android:id="@+id/imageview1"
 							android:layout_width="45dp"
 							android:layout_height="45dp"
 							android:scaleType="fitXY"
-							app:srcCompat="@drawable/yellow_circle"
+							app:srcCompat="@drawable/background"
 							tools:ignore="ContentDescription" />
 
 						<TextView
@@ -151,20 +153,21 @@
 						android:id="@+id/button1"
 						android:layout_width="match_parent"
 						android:layout_height="60dp"
-						android:background="@drawable/btn"
+						android:background="@drawable/background"
 						android:padding="8dp"
 						android:text="..."
 						android:textAllCaps="false"
 						android:textColor="#000000"
 						android:textSize="20sp"
-						android:textStyle="normal" />
+						android:textStyle="normal"
+						android:layout_marginBottom="10dp"/>
 
 					<Button
 						android:id="@+id/button3"
 						android:layout_width="match_parent"
 						android:layout_height="60dp"
-						android:layout_marginTop="1dp"
-						android:background="@drawable/btn"
+						android:layout_marginTop="10dp"
+						android:background="@drawable/background"
 						android:padding="8dp"
 						android:text="..."
 						android:textAllCaps="false"
@@ -182,7 +185,7 @@
 			android:id="@+id/linear12"
 			android:layout_width="300dp"
 			android:layout_height="60dp"
-			android:background="@drawable/wait_btn"
+			android:background="@drawable/round_corners"
 			android:gravity="center_horizontal|center_vertical"
 			android:orientation="horizontal"
 			android:paddingLeft="18dp"
@@ -204,7 +207,7 @@
 					android:layout_height="wrap_content"
 					android:padding="8dp"
 					android:text="lesson"
-					android:textColor="#000000"
+					android:textColor="#FFFFFF"
 					android:textSize="16sp"
 					android:textStyle="bold" />
 
@@ -214,7 +217,7 @@
 				android:id="@+id/linear14"
 				android:layout_width="80dp"
 				android:layout_height="50dp"
-				android:background="@drawable/quit_btn"
+				android:background="@drawable/background"
 				android:gravity="center_vertical|center_horizontal"
 				android:orientation="horizontal"
 				android:padding="0dp">
@@ -248,7 +251,7 @@
 					android:paddingTop="8dp"
 					android:paddingBottom="8dp"
 					android:text="30 /"
-					android:textColor="#000000"
+					android:textColor="#FFFFFF"
 					android:textSize="16sp"
 					android:textStyle="bold" />
 
@@ -261,7 +264,7 @@
 					android:paddingRight="8dp"
 					android:paddingBottom="8dp"
 					android:text="0"
-					android:textColor="#000000"
+					android:textColor="#FFFFFF"
 					android:textSize="16sp"
 					android:textStyle="bold" />
 

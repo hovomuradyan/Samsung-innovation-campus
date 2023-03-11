@@ -1,7 +1,10 @@
 package com.english;
 
 import android.content.Intent;
+import java.util.concurrent.TimeUnit;
 import android.os.Bundle;
+import android.util.Log;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Timer;
@@ -15,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 	protected void onCreate(Bundle _savedInstanceState) {
 		super.onCreate(_savedInstanceState);
 		setContentView(R.layout.main);
+		finish();
 		Intent intent = new Intent(this, SignIn.class);
 		startActivity(intent);
 		//initializeLogic();

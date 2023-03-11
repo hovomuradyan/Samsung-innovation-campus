@@ -1,59 +1,44 @@
 package com.english;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
+import android.graphics.Typeface;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.SparseBooleanArray;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 public class MenuActivity extends AppCompatActivity {
 	private final Intent i = new Intent();
-	private MediaPlayer f;
+	private TextView textView;
 
 	@Override
-	protected void onCreate(Bundle _savedInstanceState) {
+	protected void onCreate(Bundle  _savedInstanceState) {
 		super.onCreate(_savedInstanceState);
 		setContentView(R.layout.menu);
-		
-		initialize();
-		initializeLogic();
-	}
-	
-	private void initialize() {
 
-		Button exitBtn = findViewById(R.id.exitBtn);
+		textView = (TextView) findViewById(R.id.animtext);
+		Typeface costomFont = Typeface.createFromAsset(getAssets(), "fonts/HeyJackFreeVersion-d9yR6.otf");
+		textView.setTypeface(costomFont);
+		Button learnBtn = findViewById(R.id.exitBtn);
 		Button startBtn = findViewById(R.id.startBtn);
 
-		exitBtn.setOnClickListener(view -> finish());
-
+		learnBtn.setOnClickListener(view -> finish());
 
 		startBtn.setOnClickListener(view -> {
-			f.start();
 			i.setClass(getApplicationContext(), ChapActivity.class);
 			startActivity(i);
 		});
 	}
-	private void initializeLogic() {
-		f = MediaPlayer.create(getApplicationContext(), R.raw.cliuck);
-	}
-	
-	@Override
-	protected void onActivityResult(int _requestCode, int _resultCode, Intent _data) {
-		super.onActivityResult(_requestCode, _resultCode, _data);
-		
-		switch (_requestCode) {
-			default:
-			break;
-		}
-	}
+
 	
 	@Deprecated
 	public void showMessage(String _s) {

@@ -368,10 +368,10 @@ public class EnglishActivity extends questionsForUnits {
                     @Override
                     public void run() {
                         runOnUiThread(() -> {
-                            button1.setBackgroundResource(R.drawable.btn);
-                            button2.setBackgroundResource(R.drawable.btn);
-                            button3.setBackgroundResource(R.drawable.btn);
-                            button4.setBackgroundResource(R.drawable.btn);
+                            button1.setBackgroundResource(R.drawable.background);
+                            button2.setBackgroundResource(R.drawable.background);
+                            button3.setBackgroundResource(R.drawable.background);
+                            button4.setBackgroundResource(R.drawable.background);
                             _que1();
                         });
                     }
@@ -394,10 +394,10 @@ public class EnglishActivity extends questionsForUnits {
                     @Override
                     public void run() {
                         runOnUiThread(() -> {
-                            button1.setBackgroundResource(R.drawable.btn);
-                            button2.setBackgroundResource(R.drawable.btn);
-                            button3.setBackgroundResource(R.drawable.btn);
-                            button4.setBackgroundResource(R.drawable.btn);
+                            button1.setBackgroundResource(R.drawable.background);
+                            button2.setBackgroundResource(R.drawable.background);
+                            button3.setBackgroundResource(R.drawable.background);
+                            button4.setBackgroundResource(R.drawable.background);
                             _que1();
                         });
                     }

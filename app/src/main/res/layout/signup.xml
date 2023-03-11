@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/main_background"
+    android:background="@color/backgroundColor"
     android:orientation="vertical">
 
     <TextView
@@ -12,9 +12,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/signuptitle"
         android:text="@string/sign_up"
-        android:textSize="35dp"
+        android:textSize="35sp"
         android:textStyle="bold"
-        android:textColor="#000000"
+        android:textColor="#999999"
         android:gravity="center"
         android:layout_margin="20dp"/>
 
@@ -26,7 +26,7 @@
         android:hint="@string/email"
         android:layout_margin="10dp"
         android:padding="20dp"
-        android:drawablePadding="20dp"/>
+        android:drawablePadding="20dp" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -49,17 +49,19 @@
         android:inputType="textPassword"/>
 
     <Button
+        android:id="@+id/signupbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/signupbtn"
+        android:layout_margin="15dp"
+        android:background="@drawable/background"
         android:text="@string/register"
-        android:textSize="25sp"
-        android:layout_margin="15dp"/>
+        android:textSize="25sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/already_have_an_account" />
+        android:text="@string/already_have_an_account"
+        android:textColor="#999999"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -72,6 +74,7 @@
             android:id="@+id/goToSignIn"
             android:text="@string/login"
             android:textSize="25sp"
-            android:layout_margin="15dp"/>
+            android:layout_margin="15dp"
+            android:background="@drawable/background"/>
     </LinearLayout>
 </LinearLayout>

@@ -51,6 +51,7 @@ public class SignUp extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
+                                    finish();
                                     Intent intent = new Intent(SignUp.this, MenuActivity.class);
                                     startActivity(intent);
                                 } else {
@@ -69,6 +70,7 @@ public class SignUp extends AppCompatActivity {
         loginOldAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
                 Intent intent = new Intent(SignUp.this, SignIn.class);
                 startActivity(intent);
             }
