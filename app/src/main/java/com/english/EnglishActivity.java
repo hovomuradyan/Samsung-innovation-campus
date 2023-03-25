@@ -56,8 +56,6 @@ public class EnglishActivity extends questionsForUnits {
         initializeLogic();
     }
 
-
-
     private void initialize() {
         linear7 = findViewById(R.id.linear7);
         linear6 = findViewById(R.id.linear6);
@@ -251,13 +249,13 @@ public class EnglishActivity extends questionsForUnits {
                             _false_();
                         }
                         else{
-                            _true_();
+                            _false1_();
                         }
                     }
                 });
             }
         };
-        _timer.schedule(t, 3000);
+        _timer.schedule(t, 1500);
     }
 
     private void _btn2_que1() {
@@ -277,13 +275,13 @@ public class EnglishActivity extends questionsForUnits {
                             _false_();
                         }
                         else{
-                            _true_();
+                            _false1_();
                         }
                     }
                 });
             }
         };
-        _timer.schedule(t, 3000);
+        _timer.schedule(t, 1500);
     }
 
     private void _btn3_que1() {
@@ -303,13 +301,13 @@ public class EnglishActivity extends questionsForUnits {
                             _false_();
                         }
                         else{
-                            _true_();
+                            _false1_();
                         }
                     }
                 });
             }
         };
-        _timer.schedule(t, 3000);
+        _timer.schedule(t, 1500);
     }
 
     private void _btn4_que1() {
@@ -329,13 +327,13 @@ public class EnglishActivity extends questionsForUnits {
                             _false_();
                         }
                         else{
-                            _true_();
+                            _false1_();
                         }
                     }
                 });
             }
         };
-        _timer.schedule(t, 3000);
+        _timer.schedule(t, 1500);
     }
     @SuppressLint("SetTextI18n")
 //    public void openDialog() {
@@ -404,7 +402,7 @@ public class EnglishActivity extends questionsForUnits {
                 };
             }
         }
-        _timer.schedule(t, 3000);
+        _timer.schedule(t, 1500);
     }
 
 
@@ -420,11 +418,55 @@ public class EnglishActivity extends questionsForUnits {
                             runOnUiThread(EnglishActivity.this::_get);
                         }
                     };
-                    _timer.schedule(t, 3000);
+                    _timer.schedule(t, 2000);
                 });
             }
         };
-        _timer.schedule(t, 3000);
+        _timer.schedule(t, 2000);
+    }
+
+    private void _false1_() {
+        if (getIntent().getStringExtra("cha").equals("all")) {
+            if (total_true == 60) {
+                congr.start();
+                _get();
+            } else {
+                _num1_core();
+                t = new TimerTask() {
+                    @Override
+                    public void run() {
+                        runOnUiThread(() -> {
+                            button1.setBackgroundResource(R.drawable.background);
+                            button2.setBackgroundResource(R.drawable.background);
+                            button3.setBackgroundResource(R.drawable.background);
+                            button4.setBackgroundResource(R.drawable.background);
+                            _que1();
+                        });
+                    }
+                };
+                _timer.schedule(t, 2000);
+            }
+        } else {
+            if (total_true == 30) {
+                congr.start();
+                _get();
+            } else {
+                _num1_core();
+                t = new TimerTask() {
+                    @Override
+                    public void run() {
+                        runOnUiThread(() -> {
+                            button1.setBackgroundResource(R.drawable.background);
+                            button2.setBackgroundResource(R.drawable.background);
+                            button3.setBackgroundResource(R.drawable.background);
+                            button4.setBackgroundResource(R.drawable.background);
+                            _que1();
+                        });
+                    }
+                };
+                _timer.schedule(t, 2000);
+            }
+        }
     }
 
     private void _all_false() {

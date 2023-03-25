@@ -3,36 +3,57 @@ package com.english;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.lang.reflect.Array;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 
 public class ListeningActivity extends AppCompatActivity {
-
-    private ListView cinemaView;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listening);
-        cinemaView = findViewById(R.id.cinemaView);
-        String[] names = {"Alexandr the Great", "Fishes"};
-        String[] links = {"https://www.youtube.com/watch?v=5bsqJ4AW6GM","https://www.youtube.com/watch?v=fDIJqV7KXM8" };
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+        ListView cinemaView = findViewById(R.id.cinemaView);
+        String[] names = new String[1];
+        String[] links = new String[1];
+
+        try {
+            InputStream is = getApplicationContext().getAssets().open("movie.json");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            String json = new String(buffer, StandardCharsets.UTF_8);
+            JSONObject jsonObject = new JSONObject(json);
+            names = Arrays.copyOf(names, names.length + jsonObject.getJSONArray("names").length()-1);
+            links = Arrays.copyOf(links, names.length + jsonObject.getJSONArray("names").length()-1);
+            for (int i = 0; i < jsonObject.getJSONArray("names").length(); i++) {
+                names[i] = (jsonObject.getJSONArray("names").getString(i));
+                links[i] = (jsonObject.getJSONArray("links").getString(i));
+            }
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+            Log.d("JSON: ", "question: alo");
+        }
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(
                 this, R.layout.text_color_layout, R.id.text_view, names);
         cinemaView.setAdapter(arrayAdapter);
-        cinemaView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(links[position]));
-                startActivity(i);
-            }
+
+        String[] finalLinks = links;
+        cinemaView.setOnItemClickListener((parent, view, position, id) -> {
+            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(finalLinks[position]));
+            startActivity(i);
         });
     }
 }
