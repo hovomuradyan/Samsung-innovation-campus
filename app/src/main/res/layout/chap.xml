@@ -489,7 +489,7 @@
 								android:layout_weight="1"
 								android:background="@drawable/background"
 								android:padding="8dp"
-								android:text="All"
+								android:text="MIX"
 								android:textColor="#000000"
 								android:textSize="20sp"
 								android:textStyle="bold" />

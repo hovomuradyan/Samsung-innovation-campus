@@ -43,7 +43,7 @@ public class SignUpActivity extends AppCompatActivity {
                             Intent intent = new Intent(SignUpActivity.this, MenuActivity.class);
                             startActivity(intent);
                         } else {
-                            Toast.makeText(SignUpActivity.this, "ERROR123", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUpActivity.this, "Password must be 8+ symbols | Contact moderator", Toast.LENGTH_SHORT).show();
                         }
                     });
                 } else {

@@ -8,6 +8,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -57,7 +59,6 @@ public class SignInActivity extends AppCompatActivity {
                         Toast.makeText(SignInActivity.this, "Error: Incorrect login or password", Toast.LENGTH_SHORT).show();
                     }
                 });
-
             }
         });
 
@@ -74,28 +75,43 @@ public class SignInActivity extends AppCompatActivity {
 
         googleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
         googleBtn.setOnClickListener(v -> {
-            Log.d("google:", "Begin Google SignInActivity");
             Intent intent = googleSignInClient.getSignInIntent();
-            startActivityForResult(intent, 100);
+            activityResultLaunch.launch(intent);
+            setResult(123, intent);
         });
 
         }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 100) {
-            Log.d("google", "onActivityResult: Google Signin intent result");
-            Task<GoogleSignInAccount> accountTask = GoogleSignIn.getSignedInAccountFromIntent(data);
-            try {
-                GoogleSignInAccount account = accountTask.getResult(ApiException.class);
-                firebaseAuthWithGoogleAccount(account);
-            }
-            catch (Exception e) {
-                Log.d("google:", "onActivityResult: "+e.getMessage());
-            }
-    }
-}
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (requestCode == 100) {
+//            Log.d("google", "onActivityResult: Google Signin intent result");
+//            Task<GoogleSignInAccount> accountTask = GoogleSignIn.getSignedInAccountFromIntent(data);
+//            try {
+//                GoogleSignInAccount account = accountTask.getResult(ApiException.class);
+//                firebaseAuthWithGoogleAccount(account);
+//            }
+//            catch (Exception e) {
+//                Log.d("google:", "onActivityResult: "+e.getMessage());
+//            }
+//    }
+//}
+
+    ActivityResultLauncher<Intent> activityResultLaunch = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                Intent data = result.getData();
+                Log.d("google", "onActivityResult: Google Signin intent result");
+                Task<GoogleSignInAccount> accountTask = GoogleSignIn.getSignedInAccountFromIntent(data);
+                try {
+                    GoogleSignInAccount account = accountTask.getResult(ApiException.class);
+                    firebaseAuthWithGoogleAccount(account);
+                }
+                catch (Exception e) {
+                    Log.d("google:", "onActivityResult: "+e.getMessage());
+                }
+            });
 
     private void firebaseAuthWithGoogleAccount(GoogleSignInAccount account) {
         Log.d("google:", "firebaseAuthWithGoogleAccount: begin firebase");
@@ -105,6 +121,7 @@ public class SignInActivity extends AppCompatActivity {
                     Log.d("google", "onSuccess: Logged In");
                     Intent intent = new Intent(SignInActivity.this, MenuActivity.class);
                     startActivity(intent);
+                    finish();
                 })
                 .addOnFailureListener(e -> Log.d("google", "onFailure: Login failed"+e.getMessage()));
     }
