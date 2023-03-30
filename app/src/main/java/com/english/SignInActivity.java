@@ -29,6 +29,7 @@ public class SignInActivity extends AppCompatActivity {
     private EditText passwordLogin;
     private Button loginBtn;
     private ImageView googleBtn;
+    private ImageView facebookBtn;
     private Button createNewAccount;
     private FirebaseAuth mAuth;
 
@@ -45,6 +46,7 @@ public class SignInActivity extends AppCompatActivity {
         loginBtn = findViewById(R.id.signupbtn);
         createNewAccount = findViewById(R.id.goToSignUp);
         googleBtn = (ImageView) findViewById(R.id.googleBtn);
+        facebookBtn = (ImageView) findViewById(R.id.facebookBtn);
 
         loginBtn.setOnClickListener(v -> {
             if (emailLogin.getText().toString().isEmpty() || passwordLogin.getText().toString().isEmpty()) {
@@ -61,6 +63,7 @@ public class SignInActivity extends AppCompatActivity {
                 });
             }
         });
+
 
         createNewAccount.setOnClickListener(v -> {
             finish();
@@ -80,23 +83,12 @@ public class SignInActivity extends AppCompatActivity {
             setResult(123, intent);
         });
 
+        facebookBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(SignInActivity.this, MenuActivity.class);
+            startActivity(intent);
+            finish();
+        });
         }
-
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        if (requestCode == 100) {
-//            Log.d("google", "onActivityResult: Google Signin intent result");
-//            Task<GoogleSignInAccount> accountTask = GoogleSignIn.getSignedInAccountFromIntent(data);
-//            try {
-//                GoogleSignInAccount account = accountTask.getResult(ApiException.class);
-//                firebaseAuthWithGoogleAccount(account);
-//            }
-//            catch (Exception e) {
-//                Log.d("google:", "onActivityResult: "+e.getMessage());
-//            }
-//    }
-//}
 
     ActivityResultLauncher<Intent> activityResultLaunch = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),

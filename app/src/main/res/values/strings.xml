@@ -24,4 +24,6 @@
     <string name="example">Usage in sentence:</string>
     <string name="next">Next</string>
     <string name="prev">Prev</string>
+    <string name="listening_text">In this list, all movies will help you understand the TOEFL texts, and you can find a good film with subtitles that can help you improve your listening skills.</string>
+    <string name="movies">Movies</string>
 </resources>

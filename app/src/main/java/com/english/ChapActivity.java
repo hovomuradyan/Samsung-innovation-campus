@@ -93,7 +93,6 @@ public class ChapActivity extends AppCompatActivity {
 
         unit3Btn.setOnClickListener(view -> {
             clk.start();
-
             i.setClass(getApplicationContext(), EnglishActivity.class);
             i.putExtra("cha", "cha3");
             startActivity(i);

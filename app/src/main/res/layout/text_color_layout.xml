@@ -9,8 +9,8 @@
         <LinearLayout
             android:id="@+id/linear2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/round_corners"
+            android:layout_height="100sp"
+            android:background="@drawable/round_corners1"
             android:gravity="center_horizontal|center_vertical"
             android:orientation="vertical"
             android:layout_marginLeft="20dp"

@@ -326,7 +326,7 @@ public class EnglishActivity extends questionsForUnits {
                         if (settingsWrongAnswer == 1) {
                             _false_();
                         }
-                        else{
+                        else {
                             _false1_();
                         }
                     }
